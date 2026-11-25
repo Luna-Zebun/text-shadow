@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { createContext, useState } from "react";
+import "./App.css";
+import Controllers from "./components/controllers/controllers.component";
+import Header from "./components/Header/Header.component";
+import Preview from "./components/preview/preview.component";
+export const UseTextShadow = createContext();
 function App() {
+  const [color, setColor] = useState("#f57b51");
+  const [xOffset, setXOffset] = useState(0);
+  const [yOffset, setYOffset] = useState(0);
+  const [blurRadius, setBlurRadius] = useState(6);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <UseTextShadow.Provider
+        value={{
+          color,
+          setColor,
+          xOffset,
+          setXOffset,
+          yOffset,
+          setYOffset,
+          blurRadius,
+          setBlurRadius,
+        }}
+      >
+        <Header />
+        <div className="container">
+          <Preview />
+          <Controllers />
+        </div>
+      </UseTextShadow.Provider>
     </div>
   );
 }

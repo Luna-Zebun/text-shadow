@@ -1,0 +1,12 @@
+:root{
+    --firstColor:#f57b51;
+    --secondColor:#f6eedf;
+}
+.header {
+font-size: 4rem;
+    text-align: center;
+    color: #f582503d;
+    font-family: 'Niconne', cursive;
+    font-weight: 700;
+    text-shadow: 5px 5px 0px var(--firstColor);   
+}

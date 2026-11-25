@@ -1,0 +1,114 @@
+.first-color { 
+ background: #d63447; 
+}
+ 
+.second-color { 
+ background: #f57b51; 
+}
+
+.third-color { 
+ background: #f6eedf; 
+}
+
+.fourth-color { 
+ background: #d1cebd; 
+}
+
+:root{
+    --firstColor:#f57b51;
+    --secondColor:#f6eedf;
+}
+.previewContainer{
+    display: flex;
+    flex-direction: column;
+}
+.SampleText {
+    /* background-color: #ffffff; */
+    width: 400px;
+    padding: 50px;
+    text-align: center;
+    color: #000000bf;
+    border-radius: 40px;
+}
+.SampleText h1{
+font-size: 56px;
+}
+.CssBox{
+    background-color:var(--firstColor) ;
+        width: 500px;
+    padding: 15px;
+    height: 10vh;
+display: flex;
+justify-content: space-between;
+color:var(--secondColor);
+border-radius: 11px;
+}
+/* .copyButton {
+        height: 36PX;
+        background-color: #ffffff;
+        color:#00000099 ;
+        border-radius: 11px;
+} */
+.copyButton {
+  /* Theme tokens — override these to recolour the button */
+  --primary: #F4FF2B;
+  --secondary: #0F191E;
+  --surface: #E2F1F2;
+  --bink: var(--secondary);   /* ink / foreground */
+  --bsurf: var(--surface);    /* surface / background */
+  position: relative;
+  isolation: isolate;
+  font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 13px 24px;
+  border: 1px solid var(--bink);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--bink);
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.copyButton-label {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  transition: inherit;
+}
+/* Shared sliding panel used by many fill effects */
+.copyButton::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: var(--bink);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s ease;
+}
+
+.fx-9 { 
+  overflow: visible; 
+color:var(--secondColor);
+border-color: var(--secondColor);}
+.fx-9::before { display: none; }
+.fx-9:is(:hover, :focus-visible, [data-preview]) { transform: translateY(-4px); box-shadow: 0 8px 0 -2px color-mix(in srgb, var(--bink) 30%, transparent); }
+
+.copyButton:focus-visible {
+  outline: 2px solid var(--bink);
+  outline-offset: 5px;
+}
+.copyButton:disabled { cursor: not-allowed; opacity: 0.5; }
+.copyButton:disabled::before, .copyButton:disabled::after { animation: none !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  .copyButton, .copyButton *, .copyButton::before, .copyButton::after,
+  .copyButton *::before, .copyButton *::after {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+}
